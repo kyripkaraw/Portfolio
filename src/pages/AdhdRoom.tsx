@@ -1,6 +1,6 @@
 import VideoEphtein from '../assets/memes/videoeps.mp4'
 import CarpetClean from '../assets/memes/asmr_cleaning.mp4'
-import "../AdhdRoom.css"
+import "../styles/AdhdRoom.css"
 
 function ADHDRoom() {
     return (

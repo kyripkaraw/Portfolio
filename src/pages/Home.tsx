@@ -1,6 +1,6 @@
-import MemeFloater from "../MemeFlooter";
+import MemeFloater from "../components/MemeFlooter.tsx";
 import avatarImage from "../assets/avatar.jpg";
-import ComponentMyStack from "../ComponentMyStack.tsx";
+import ComponentMyStack from "../components/ComponentMyStack.tsx";
 
 function Home() {
     return (

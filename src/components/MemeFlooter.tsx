@@ -1,7 +1,7 @@
-import memeImage1 from './assets/memes/meme.jpg';
-import memeImage2 from './assets/memes/meme2.jpg';
-import memeImage3 from './assets/memes/meme3.jpg';
-import memeImage4 from './assets/memes/meme4.jpg';
+import memeImage1 from '../assets/memes/meme.jpg';
+import memeImage2 from '../assets/memes/meme2.jpg';
+import memeImage3 from '../assets/memes/meme3.jpg';
+import memeImage4 from '../assets/memes/meme4.jpg';
 
 function MemeBlock() {
     return (

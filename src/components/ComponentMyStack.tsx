@@ -1,5 +1,5 @@
 import { FaJava, FaPython, FaJs } from "react-icons/fa";
-import "./ComponentMyStack.css"
+import "../styles/ComponentMyStack.css"
 
 const stackData = [
     {
@@ -7,7 +7,7 @@ const stackData = [
         name: "Java",
         icon: <FaJava size={50} />,
         color: "#e76f00",
-        desc: "I write Minecraft plugins and break blocks with code."
+        desc: "I write Minecraft plugins on Paper api and Bukkit."
     },
     {
         id: 2,

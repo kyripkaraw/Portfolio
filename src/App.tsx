@@ -7,9 +7,12 @@ import Home from "./pages/Home"
 function App() {
   return (
       <div className="main-container">
-          <NavBar/>
-
-
+          <div className='nav-bar'>
+              <nav className='nav-bar-in'>
+                  <Link to='/'> Home | </Link>
+                  <Link to='/adhd-room'> ADHD Room </Link>
+              </nav>
+          </div>
           <div className="content-area">
               <Routes>
                   <Route path="/" element={<Home/>}/>
@@ -18,18 +21,7 @@ function App() {
           </div>
       </div>
   )
-
 }
 
-function NavBar() {
-    return (
-        <div className='nav-bar'>
-            <nav className='nav-bar-in'>
-                <Link to='/'> Home | </Link>
-                <Link to='/adhd-room'> ADHD Room </Link>
-            </nav>
-        </div>
-    )
-}
 
 export default App

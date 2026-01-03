@@ -1,0 +1,52 @@
+.stack-container {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.stack-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.stack-card {
+    background: #1e1e1e;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.stack-card h3 {
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #ccc;
+
+
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+
+.stack-card:hover .description {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 10px;
+}

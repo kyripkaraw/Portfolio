@@ -9,16 +9,7 @@ function ADHDRoom() {
             <div className="video-container">
 
                 <video
-                    src={CarpetClean}
-                    className="carpet-clean"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                    width="100%"
-                    style={{maxWidth: "400px"}}
-                ></video>
+                    src={CarpetClean} className="carpet-clean" autoPlay muted loop playsInline controls width="100%" style={{maxWidth: "400px"}}></video>
 
                 <div className="middle-text">
                     <h2>Brain Rot Zone</h2>
@@ -28,20 +19,8 @@ function ADHDRoom() {
                     </p>
                 </div>
 
-                <video
-                    src={VideoEphtein}
-                    className="video-epstein"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                    width="100%"
-                    style={{maxWidth: "400px"}}
-                ></video>
-
+                <video src={VideoEphtein} className="video-epstein" autoPlay muted loop playsInline controls width="100%" style={{maxWidth: "400px"}}></video>
             </div>
-
         </div>
     )
 }

@@ -2,7 +2,7 @@ import MemeFloater from "../components/MemeFlooter.tsx";
 import avatarImage from "../assets/avatar.jpg";
 import ComponentMyStack from "../components/ComponentMyStack.tsx";
 
-function Home() {
+function HomePage() {
     return (
         <div className="portfolio-container">
             <div className="header-row">
@@ -15,4 +15,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default HomePage;

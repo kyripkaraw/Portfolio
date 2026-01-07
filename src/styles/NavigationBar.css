@@ -48,3 +48,34 @@
     box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
     transform: scale(1.05);
 }
+@media (max-width: 768px) {
+    .nav-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0;
+    }
+
+    .glass-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+
+        width: 95%;
+        margin: 0 auto;
+
+
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+
+    .glass-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}

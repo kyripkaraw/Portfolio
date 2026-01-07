@@ -1,25 +1,29 @@
 import {useMemo} from "react";
+import CarpetVideo from "../assets/memes/video/asmr_cleaning.mp4";
+import EpsteinVideo from "../assets/memes/video/videoeps.mp4";
+import CarpetVideo2 from "../assets/memes/video/carpet_clean2.mp4";
+import SoapCutting from "../assets/memes/video/soap_cleaning.mp4";
 
 const videoList = [
     {
         id: 1,
         name: "Carpet Cleaning",
-        link: "src/assets/memes/video/asmr_cleaning.mp4"
+        link: CarpetVideo
     },
     {
         id: 2,
         name: "Epstein Vs Diddy",
-        link: "src/assets/memes/video/videoeps.mp4"
+        link: EpsteinVideo
     },
     {
         id: 3,
         name: "Carpet Cleaning",
-        link: "src/assets/memes/video/carpet_clean2.mp4"
+        link: CarpetVideo2
     },
     {
         id: 4,
         name: "Soap Cutting",
-        link: "src/assets/memes/video/soap_cleaning.mp4"
+        link: SoapCutting
     }
 ]
 

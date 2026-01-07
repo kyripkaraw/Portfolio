@@ -5,6 +5,7 @@ import NavigationBar from "./components/NavigationBar";
 import AdhdRoomPage from "./pages/AdhdRoomPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import ErrorPage from "./pages/OopsPage.tsx";
+import YtDownloader from "./pages/YouTubeDownloaderPage.tsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Routes>
                   <Route path="/" element={<HomePage/>}/>
                   <Route path="/adhd-room" element={<AdhdRoomPage/>}/>
+                  <Route path="/yt-downloader" element={<YtDownloader/>}/>
                   <Route path="*" element={<ErrorPage/>}/>
               </Routes>
           </div>

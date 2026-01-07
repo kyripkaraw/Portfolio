@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import {FaHome, FaBrain, FaBeer} from "react-icons/fa";
+import {FaHome, FaBrain, FaBeer, FaYoutube} from "react-icons/fa";
 import "../styles/NavigationBar.css"
 
 export default function NavigationBar() {
@@ -22,11 +22,18 @@ export default function NavigationBar() {
                     <span> ADHD Room </span>
                 </NavLink>
                 <NavLink
-                    to="/404"
+                    to="/free-beer"
                     className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
                     >
                     <FaBeer className="nav-icon" />
                     <span> Free Beer </span>
+                </NavLink>
+                <NavLink
+                    to="/yt-downloader"
+                    className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
+                >
+                    <FaYoutube className="nav-icon" />
+                    <span> YouTube Downloader </span>
                 </NavLink>
             </nav>
         </div>

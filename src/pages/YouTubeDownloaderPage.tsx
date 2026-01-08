@@ -1,30 +1,59 @@
-import {  FaYoutube } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import "../styles/YouTubeDownloaderPage.css"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {client} from "../api.ts";
 
 function YouTubeDownloaderPage() {
-    const [msg, setMsg] = useState("")
-    const [link, setLink] = useState("")
+    const [ msg, setMsg ] = useState("")
+    const [ link, setLink ] = useState("")
+    const [currentJobId, setCurrentJobId] = useState<string | null>(null);
+    const [isDownloading, setIsDownloading] = useState(false);
 
     const sendUrlMutation = client.sendVideoUrl.useMutation();
+    const baseUrl = "http://localhost:3000"
+
+    const statusQuery = client.checkStatus.useQuery(
+        ["checkStatus", currentJobId],
+        {params: {jobId: currentJobId || ""}},
+        {
+            enabled: !!currentJobId && !isDownloading,
+            refetchInterval: (data) => {
+                if (data?.body?.status === "finished") return false;
+                return 1000;
+            }
+        }
+    )
+
+    useEffect(() => {
+        if (statusQuery.data?.body?.status === 'finished' && currentJobId && !isDownloading) {
+            setIsDownloading(true);
+            window.location.href = `${baseUrl}/download/${currentJobId}`;
+        }
+    }, [statusQuery.data, currentJobId, baseUrl, isDownloading]);
+
 
     const handleDownload = async () => {
         if (!link) return setMsg("Enter link!");
+        setCurrentJobId(null);
+        setIsDownloading(false);
 
         try {
             const result = await sendUrlMutation.mutateAsync({
-                body: { url: link }
+                body: {
+                    url: link
+                }
             });
             if (result.status === 200) {
-                setMsg("backend response" + result.body.message)
+                setCurrentJobId(result.body.jobId);
             } else {
-                setMsg("Error: " + result.body);
+                setMsg("Error: " + JSON.stringify(result.body));
             }
         } catch (error) {
-            setMsg("Error: " + error);
+            console.log(error)
+            setMsg("Request failed");
         }
     }
+    const progress = statusQuery.data?.body;
 
 
     return (
@@ -44,14 +73,28 @@ function YouTubeDownloaderPage() {
                         onClick={handleDownload}
                         disabled={sendUrlMutation.isPending}>
 
-                    {sendUrlMutation.isPending ? "I am sending..." : "Download"}
+                    {sendUrlMutation.isPending ? "Sending..." : "Download"}
 
                 </button>
             </div>
+            <p>{msg}</p>
             <p className="alert-text"> {msg} </p>
 
+
+            {currentJobId && progress && (
+                <div>
+                    <h3>Status: {progress.status}</h3>
+                    {progress.percentage && (
+                        <div>
+                            <p>Progress: {progress.percentage}%</p>
+
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
+
 }
 
 

@@ -4,7 +4,7 @@
     color: white;
 }
 
-.yt-icon { color: #ff0000; margin-right: 10px; }
+.yt-icon { color: #6a0dad; margin-right: 10px; }
 
 .search-box {
     position: relative;
@@ -20,8 +20,8 @@
 }
 
 .search-box:focus-within {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(106, 13, 173, 0.3);
+    border-color: #6a0dad;
 }
 
 .search-input {
@@ -35,7 +35,7 @@
 }
 
 .search-btn {
-    background: #ff0000;
+    background: #6a0dad;
     color: white;
     border: none;
     border-radius: 30px;
@@ -46,6 +46,6 @@
 }
 
 .search-btn:hover {
-    background: #cc0000;
+    background: #4c0a7a;
     transform: scale(1.05);
 }

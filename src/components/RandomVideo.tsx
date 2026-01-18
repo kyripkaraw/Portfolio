@@ -15,7 +15,7 @@ const videoLinks = [
 ]
 function RandomVideo() {
     const [videoData, setVideoData] = useState<VideoData | null>(null);
-    const [loading, setLoading] = useState(false);
+    const [ ,setLoading] = useState(false);
 
     const videoStream = async () => {
         setLoading(true)

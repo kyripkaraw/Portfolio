@@ -34,10 +34,9 @@ function RandomVideo() {
                 throw new Error(errorData.detail || 'Download error');
             }
             const data = await response.json()
-            const rawUrl = data.stream_url; // Або data.url, перевір що приходить
+            const rawUrl = data.stream_url;
             const proxyUrl = `https://api.kyripka.dev/proxy-video?url=${encodeURIComponent(rawUrl)}`;
 
-            // 3. Зберігаємо вже НАШЕ посилання
             setVideoData({
                 link: proxyUrl,
                 name: data.title || "Random Video"
@@ -58,12 +57,12 @@ function RandomVideo() {
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
             <br /><br />
 
-            {/* 3. Перевіряємо, чи є дані, перед тим як показувати */}
+
             {videoData ? (
                 <div>
                     <h3>{videoData.name}</h3>
                     <video
-                        key={videoData.link} // Цей ключ змушує плеєр оновлюватися при зміні відео
+                        key={videoData.link}
                         src={videoData.link}
                         controls
                         autoPlay

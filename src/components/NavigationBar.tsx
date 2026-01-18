@@ -29,11 +29,11 @@ export default function NavigationBar() {
                     <span> Free Beer </span>
                 </NavLink>
                 <NavLink
-                    to="/yt-downloader"
+                    to="/video-downloader"
                     className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
                 >
                     <FaYoutube className="nav-icon" />
-                    <span> YouTube Downloader </span>
+                    <span> Video Downloader </span>
                 </NavLink>
             </nav>
         </div>

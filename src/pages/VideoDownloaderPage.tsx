@@ -1,8 +1,8 @@
 import { RiVideoOnAiFill } from "react-icons/ri";
-import "../styles/YouTubeDownloaderPage.css";
+import "../styles/VideoDownloaderPage.css";
 import {type ChangeEvent, useState} from "react";
 
-function YouTubeDownloaderPage() {
+function VideoDownloaderPage() {
     const [url, setUrl] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -14,7 +14,7 @@ function YouTubeDownloaderPage() {
         setError(null);
 
         try {
-            const response = await fetch('http://16.171.253.188:8000/download-video', {
+            const response = await fetch('https://api.kyripka.dev/video/download-video', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -87,4 +87,4 @@ function YouTubeDownloaderPage() {
     );
 }
 
-export default YouTubeDownloaderPage;
+export default VideoDownloaderPage;

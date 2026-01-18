@@ -2,10 +2,10 @@ import './styles/App.css'
 import { Routes, Route } from 'react-router-dom';
 import NavigationBar from "./components/NavigationBar";
 
-import AdhdRoomPage from "./pages/AdhdRoomPage.tsx";
+/*import AdhdRoomPage from "./pages/AdhdRoomPage.tsx"; */
 import HomePage from "./pages/HomePage.tsx";
 import ErrorPage from "./pages/OopsPage.tsx";
-import YtDownloader from "./pages/YouTubeDownloaderPage.tsx";
+import VideoDownloader from "./pages/VideoDownloaderPage.tsx";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
           <div className="content-area">
               <Routes>
                   <Route path="/" element={<HomePage/>}/>
-                  <Route path="/adhd-room" element={<AdhdRoomPage/>}/>
-                  <Route path="/yt-downloader" element={<YtDownloader/>}/>
+                  <Route path="/adhd-room" element={<ErrorPage/>}/>
+                  <Route path="/video-downloader" element={<VideoDownloader/>}/>
                   <Route path="*" element={<ErrorPage/>}/>
               </Routes>
           </div>
